@@ -2,6 +2,11 @@ import { Workbox } from 'workbox-window';
 import Editor from './editor';
 import './database';
 import '../css/style.css';
+import Logo from '../images/logo.png';
+
+window.addEventListener('load', function() {
+  document.getElementById('img').src = Logo;
+})
 
 const main = document.querySelector('#main');
 main.innerHTML = '';
