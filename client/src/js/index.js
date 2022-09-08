@@ -3,6 +3,7 @@ import Editor from './editor';
 import './database';
 import '../css/style.css';
 import Logo from '../../favicon.ico';
+import './install';
 
 window.addEventListener('load', function() {
   document.getElementById('img').src = Logo;
@@ -31,8 +32,12 @@ if (typeof editor === 'undefined') {
 // Check if service workers are supported
 if ('serviceWorker' in navigator) {
   // register workbox service worker
-  const workboxSW = new Workbox('/src-sw.js');
-  workboxSW.register();
+  // const workboxSW = new Workbox('./src-sw.js');
+  // workboxSW.register();
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('./service-worker.js');
+  })
+  //./service-worker.js
 } else {
   console.error('Service workers are not supported in this browser.');
 }

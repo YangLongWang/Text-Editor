@@ -12,7 +12,6 @@ const initdb = async () =>
     },
   });
 
-
 export const putDb = async (content) => {
   console.log('PUT to the database');
 
